@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
 import static io.qameta.allure.Allure.step;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Owner("admin")
 @Feature("Auth")
@@ -32,7 +33,9 @@ public class AuthTest {
         });
         step("Проверяем что успешно авторизовались", () -> {
             step("Текущая страница - это глаавня страницу приложения");
-            step("Имя пользователя 'Mr Test'");
+            step("Имя пользователя 'Mr Test'", () -> {
+                assertEquals("Mr Test", "Ms Test");
+            });
             step("Логин пользователя 'test-user'");
         });
     }
