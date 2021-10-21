@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 
+import java.util.Random;
+
 import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -52,7 +54,11 @@ public class AuthTest {
         });
         step("Авторизуемся как пользователь 'Mr Test'", () -> {
             step("Вводим логин 'test-user@gmail.com'");
-            step("Вводим пароль 'test-pass'");
+            step("Вводим пароль 'test-pass'", () -> {
+                if (new Random().nextBoolean()) {
+                    assertEquals(1, 2);
+                }
+            });
             step("Нажимаем кнопку Войти");
         });
         step("Проверяем что успешно авторизовались", () -> {
