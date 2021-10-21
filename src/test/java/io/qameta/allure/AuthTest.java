@@ -28,15 +28,13 @@ public class AuthTest {
             step("Нажимаем кнопку Facebook");
             step("Проверяем что перешли на страницу Facebook");
         });
-        step("Авторизуемся как пользователь 'Mr Test'", () -> {
-            step("Вводим логин 'test-user@gmail.com'");
-            step("Вводим пароль 'test-pass'");
-            step("Нажимаем кнопку Войти");
+        step("Авторизуемся как пользователь 'Mr Random'", () -> {
+            step("Вводим логин 'random-user@gmail.com'");
+            step("Вводим пароль 'random-pass'");
         });
         step("Проверяем что успешно авторизовались", () -> {
             step("Текущая страница - это глаавня страницу приложения");
-            step("Имя пользователя 'Mr Test'");
-            step("Логин пользователя 'test-user'");
+            step("Логин пользователя 'test-ramdom'");
         });
     }
 
@@ -54,11 +52,7 @@ public class AuthTest {
         });
         step("Авторизуемся как пользователь 'Mr Test'", () -> {
             step("Вводим логин 'test-user@gmail.com'");
-            step("Вводим пароль 'test-pass'", () -> {
-                if (new Random().nextBoolean()) {
-                    assertEquals(1, 2);
-                }
-            });
+            step("Вводим пароль 'test-pass'");
             step("Нажимаем кнопку Войти");
         });
         step("Проверяем что успешно авторизовались", () -> {
